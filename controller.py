@@ -33,8 +33,8 @@ while True:
     # Morphing is basically applying some transformation on images
     # Check out this link for more information : https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html
     mask = cv2.morphologyEx(mask,cv2.MORPH_OPEN,np.ones((5,5),np.uint8)) # morph_open is just another name of "erosion followed by dilation"
-    # cv2.imshow("morph_open",mask)
     mask = cv2.morphologyEx(mask,cv2.MORPH_CLOSE,np.ones((5,5),np.uint8))# close is reverse of opening "dilation followed by erosion"
+    # cv2.imshow("morph_open",mask)
 
 
     upContour = mask[0:height//2,0:width]
